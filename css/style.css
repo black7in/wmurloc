@@ -1,0 +1,117 @@
+/* Colores y estilos principales */
+:root{
+  --bg-dark: #0b0f13;
+  --panel: rgba(255,255,255,0.04);
+  --accent: #ffd700; /* amarillo principal más vivo */
+  --muted: rgba(255,255,255,0.65);
+}
+
+body.bg-dark-page{
+  background: linear-gradient(180deg, #071019 0%, var(--bg-dark) 100%);
+  color: #e9eef6;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Header */
+.logo{
+  filter: drop-shadow(0 6px 18px rgba(246,200,76,0.12));
+}
+
+/* Hero card */
+.hero-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(246,200,76,0.08);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  max-width: 900px;
+  margin: 1rem auto;
+}
+
+/* Icon */
+.icon-shadow{
+  background: linear-gradient(135deg, rgba(246,200,76,0.06), rgba(255,255,255,0.02));
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Buttons */
+.btn-warning{
+  /* Amarillo más vivo, buen contraste y sin opacidad extra */
+  background: linear-gradient(180deg, #ffd700, #ffbf00);
+  color: #111 !important;
+  border: none;
+  box-shadow: 0 8px 26px rgba(255,191,0,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-warning:hover, .btn-warning:focus{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(255,191,0,0.22);
+}
+.btn-outline-light{
+  border-color: rgba(255,255,255,0.08);
+}
+
+/* Footer small */
+footer{
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Modal adjustments */
+.modal-backdrop.show{
+  /* Oscurecer el backdrop para centrar la atención en el modal */
+  background-color: rgba(2,6,23,0.82) !important;
+}
+
+.modal-content{
+  /* Rediseño: fondo sutil en gradiente, borde y sombra más marcada */
+  position: relative;
+  background: linear-gradient(180deg, #071018 0%, #091421 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255,215,0,0.06);
+  box-shadow: 0 22px 60px rgba(2,6,23,0.9);
+  overflow: hidden;
+}
+
+/* Franja de acento en la parte superior del modal */
+.modal-content::before{
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), #ffbf00);
+}
+
+.modal-header{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.modal-title{
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.modal-body{
+  color: #dfe9f3;
+  line-height: 1.55;
+}
+
+.modal-footer{
+  border-top: 1px solid rgba(255,255,255,0.03);
+  background: transparent;
+}
+
+/* Botones dentro del modal: más suaves y con buen contraste */
+.modal .btn-secondary{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #e8eef7;
+}
+.modal .btn-secondary:hover{ background: rgba(255,255,255,0.08); }
+
+/* Responsiveness tweaks */
+@media (max-width: 576px){
+  .hero-card{ padding: 2rem 1.25rem; }
+  .logo{ width: 140px; }
+}
